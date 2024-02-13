@@ -3,7 +3,7 @@
 	# match host
 	@proxyhostport header_regexp hostport Host ([A-Za-z0-9-]+?)-([0-9]+)\.fbi.com
     @proxyhostonly header_regexp hostport Host ([A-Za-z0-9-]+?)\.fbi.com
-    #
+    # reverse proxy
 	reverse_proxy @proxyhostport http://bunproxy {
 		header_up Host {re.hostport.1}:{re.hostport.2}
 	}
