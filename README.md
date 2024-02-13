@@ -12,6 +12,7 @@ Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one Ja
 
 ```caddy
 *.fbi.com {
+	tls internal
 	# match host
 	@proxyhostport header_regexp hostport Host ([A-Za-z0-9-]+?)-([0-9]+)\.fbi.com
     @proxyhostonly header_regexp hostport Host ([A-Za-z0-9-]+?)\.fbi.com
