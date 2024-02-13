@@ -1,6 +1,6 @@
 # Bun Proxy
 
-Simple http + websockets proxy, without dependencies powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ )
+Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ ) without dependencies
 
 ## Use cases
 
@@ -53,10 +53,9 @@ services:
     command: caddy respond --listen :2000-2004 "I'm server {{.N}} on port {{.Port}}"
 ```
 
-Access your services by
+Test your services by:
 
-```
-
+```bash
 # without port, defaults to 80
 curl -k https://nginx.fbi.com:8443
 
