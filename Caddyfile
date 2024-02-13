@@ -1,0 +1,14 @@
+*.fbi.com {
+	tls internal
+	# match host
+	@proxyhostport header_regexp hostport Host ([A-Za-z0-9-]+?)-([0-9]+)\.fbi.com
+    @proxyhostonly header_regexp hostport Host ([A-Za-z0-9-]+?)\.fbi.com
+    #
+	reverse_proxy @proxyhostport http://bunproxy {
+		header_up Host {re.hostport.1}:{re.hostport.2}
+	}
+	reverse_proxy @proxyhostonly http://bunproxy {
+		header_up Host {re.hostport.1}:80
+	}
+	reverse_proxy http://bunproxy
+}

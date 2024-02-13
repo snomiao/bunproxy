@@ -1,0 +1,20 @@
+services:
+  caddy:
+    image: caddy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports: [8443:443]
+  bunproxy:
+    restart: always
+    build: .
+    image: ghcr.io/snomiao/bunproxy
+    # dev
+    working_dir: /src
+    command: bun --hot /src/index.ts
+    volumes:
+      - ./:/src
+  nginx:
+    image: nginx
+  pong: 
+    image: caddy
+    command: caddy respond --listen :2000-2004 "I'm server {{.N}} on port {{.Port}}"
