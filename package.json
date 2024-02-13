@@ -7,5 +7,20 @@
   "type": "module",
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "description": "Simple http + websockets proxy server powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ )",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "docker compose build"
+  },
+  "keywords": [
+    "bun",
+    "proxy",
+    "http",
+    "typescript"
+  ],
+  "author": "snomiao@gmail.com",
+  "license": "ISC"
 }

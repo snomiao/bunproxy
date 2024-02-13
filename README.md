@@ -1,5 +1,7 @@
 # Bun Proxy
 
+Simple http + websockets proxy, without dependencies powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ )
+
 ## Use cases
 
 ### Setup your HTTPS Local network port forwarder with Caddy + bunproxy
