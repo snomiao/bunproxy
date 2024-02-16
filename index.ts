@@ -2,16 +2,22 @@ import WebSocket from "ws";
 Bun.serve<{ wsc?: WebSocket; headers: Headers }>({
   fetch(req, server) {
     if (!server.upgrade(req, { data: { headers: req.headers } })) {
-      console.log(req.url + JSON.stringify(req.headers.toJSON()));
-      return fetch(req).catch(
-        (err) => new Response(String(err), { status: 500 })
-      );
+      console.log(req.url);
+      return fetch(req)
+        .then((res) => {
+          console.log(res);
+          const headers = res.headers;
+          // hack
+          headers.delete("Content-Encoding");
+          return new Response(res.body, { headers });
+        })
+        .catch((err) => new Response(String(err), { status: 500 }));
     }
   },
   websocket: {
     open(ws) {
       const headers = ws.data.headers;
-      const target = "ws://" + headers.get("host");
+      const target = `ws://${headers.get("host")}`;
       console.log(`  ${target}`);
       headers.delete("upgrade"); // must delete
       headers.delete("sec-websocket-key"); // must delete
