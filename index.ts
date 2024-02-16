@@ -6,10 +6,10 @@ Bun.serve<{ wsc?: WebSocket; headers: Headers }>({
       return fetch(req)
         .then((res) => {
           console.log(res);
-          const headers = res.headers;
-          // hack
+          const {headers, status, statusText} = res;
+          // hack fix bun decoding error
           headers.delete("Content-Encoding");
-          return new Response(res.body, { headers });
+          return new Response(res.body, { headers, status, statusText });
         })
         .catch((err) => new Response(String(err), { status: 500 }));
     }
