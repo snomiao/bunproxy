@@ -3,11 +3,18 @@ Bun.serve<{ wsc?: WebSocket; headers: Headers }>({
   fetch(req, server) {
     if (!server.upgrade(req, { data: { headers: req.headers } })) {
       console.log(`> ${req.url}`);
-      return fetch(req,{redirect: "manual" })
+      // const req = req.clone();
+      // req.headers.delete("Accept-Encoding");
+      return fetch(req,{verbose: true })
         .then((res) => {
-          // hack for bug: decoding error
-          res.headers.delete("Content-Encoding");
-          return res
+          // console.log(res);
+          // const {headers, status, statusText} = res;
+          // // hack fix bun decoding error
+          // // headers.delete("Content-Encoding");
+          // return new Response(res.body, { headers, status, statusText });
+          const res2 = res
+          res2.headers.delete("Content-Encoding");
+          return res2
         })
         .catch((err) => new Response(String(err), { status: 500 }));
     }
