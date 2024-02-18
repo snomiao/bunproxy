@@ -9,7 +9,7 @@
     "typescript": "^5.0.0"
   },
   "description": "Simple http + websockets proxy server powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ ) without dependencies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {},
   "scripts": {
