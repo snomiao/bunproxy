@@ -1,6 +1,6 @@
 # Bun Proxy
 
-Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ ) without dependencies
+Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one JavaScript runtime](https://bun.sh/) without dependencies
 
 ## Use cases
 
@@ -15,8 +15,8 @@ Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one Ja
 	tls internal
 	# match host
 	@proxyhostport header_regexp hostport Host ([A-Za-z0-9-]+?)-([0-9]+)\.fbi.com
-    @proxyhostonly header_regexp hostport Host ([A-Za-z0-9-]+?)\.fbi.com
-    #
+  @proxyhostonly header_regexp hostport Host ([A-Za-z0-9-]+?)\.fbi.com
+  #
 	reverse_proxy @proxyhostport http://bunproxy:9097 {
 		header_up Host {re.hostport.1}:{re.hostport.2}
 	}

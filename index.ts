@@ -3,13 +3,16 @@ Bun.serve<{ wsc?: WebSocket; headers: Headers }>({
   fetch(req, server) {
     if (!server.upgrade(req, { data: { headers: req.headers } })) {
       console.log(`> ${req.url}`);
-      return fetch(req, { redirect: "manual" })
+      return fetch(req, { redirect: "manual", credentials: "include" })
         .then((res) => {
           // hack for bug: decoding error
           res.headers.delete("Content-Encoding");
           return res;
         })
-        .catch((err) => new Response(String(err), { status: 500 }));
+        .catch((err) => {
+          console.error(String(err));
+          return new Response(String(err), { status: 500 });
+        });
     }
   },
   websocket: {
