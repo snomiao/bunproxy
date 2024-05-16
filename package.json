@@ -11,7 +11,7 @@
   "description": "Simple http + websockets proxy server powerd by - [Bun — A fast all-in-one JavaScript runtime]( https://bun.sh/ ) without dependencies",
   "version": "1.0.1",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": { "http-proxy": "^1.18.1" },
   "scripts": {
     "test": "docker compose build",
     "release": "npm version patch && docker compose build && docker compose push && npm publish"

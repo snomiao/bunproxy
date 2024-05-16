@@ -15,6 +15,6 @@ services:
       - ./:/src
   nginx:
     image: nginx
-  pong: 
+  pong:
     image: caddy
     command: caddy respond --listen :2000-2004 "I'm server {{.N}} on port {{.Port}}"
