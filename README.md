@@ -4,12 +4,26 @@ Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one Ja
 
 ## Use cases
 
-browser
--> https://host-port.example.com
--> caddy listen on https://*.example.com/ with auto TLS
--> bunproxy
+### 1. Port forwarding with Caddy + bunproxy
+
+
+-> browser request: https://host-port.example.com
+-> Caddy listen on https://*.example.com/ with auto TLS
+-> Set `Host: $host:$port` header
+-> proxy to http://bunproxy
 -> http://host:port
 -> served contents
+
+### 2. Reverse proxy
+
+-> browser request: https://service.host.example.com
+-> Caddy listen on https://*.host.example.com/ with auto TLS
+-> Set `Host: localhost:$port` header to the service.
+-> proxy to http://bunproxy
+-> http://localhost:port
+-> served contents
+
+## Setup
 
 ### Setup your HTTPS Local network port forwarder with Caddy + bunproxy
 
