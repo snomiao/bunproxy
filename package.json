@@ -9,9 +9,11 @@
     "typescript": "^5.0.0"
   },
   "description": "Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
-  "dependencies": { "http-proxy": "^1.18.1" },
+  "dependencies": {
+    "http-proxy": "^1.18.1"
+  },
   "scripts": {
     "test": "docker compose build",
     "release": "npm version patch && docker compose build && docker compose push && npm publish"
