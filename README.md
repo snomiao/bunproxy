@@ -1,6 +1,6 @@
 # Bun Proxy
 
-Simple http + websockets proxy server, powerd by - [Bun — A fast all-in-one JavaScript runtime](https://bun.sh/) without dependencies
+Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.
 
 ## Use cases
 
