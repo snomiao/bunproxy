@@ -58,7 +58,10 @@ export function bunProxy(port: number, auth?: string) {
         headers.delete("sec-websocket-key"); // must delete
         headers.delete("sec-websocket-version"); // must delete
         // headers
-        const wsc = new WebSocket(url, { headers: new Headers(headers) });
+        const wsc = new WebSocket(url, {
+          // @ts-ignore
+          headers: new Headers(headers),
+        });
         wsc.addEventListener("message", (message) => {
           // console.log("message");
           browser2proxy.send(message.data as string);

@@ -26,15 +26,14 @@
     "release": "npm version patch && docker compose build && docker compose push && npm publish",
     "test": "docker compose build"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@types/bun": "^1.1.4",
     "@types/jest": "^29.5.12",
+    "get-port": "^7.1.0",
     "http-proxy": "^1.18.1",
     "minimist": "^1.2.8",
     "peek-log": "^0.0.4",
-    "@types/bun": "^1.1.4",
-    "get-port": "^7.1.0",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
