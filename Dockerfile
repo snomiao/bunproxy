@@ -3,5 +3,5 @@ FROM oven/bun
 # RUN npm i -g bun
 WORKDIR /src
 COPY index.ts ./
-ENV PORT=80
+ENV BUNPROXY_PORT=80
 CMD bun index.ts

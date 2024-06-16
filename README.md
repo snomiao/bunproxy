@@ -2,10 +2,14 @@
 
 Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.
 
+## Quick Setup
+
+bunx pm2 start --name bunproxy bunx -- bunproxy 8228
+bunx pm2 monit
+
 ## Use cases
 
 ### 1. Port forwarding with Caddy + bunproxy
-
 
 -> browser request: https://host-port.example.com
 -> Caddy listen on https://*.example.com/ with auto TLS
@@ -25,7 +29,7 @@ Domain-based Port forwarder with http&websockets supported, proxy server is powe
 
 ## Setup
 
-### Setup your HTTPS Local network port forwarder with Caddy + bunproxy
+### Example:1 Setup your HTTPS Local network port forwarder with Caddy + bunproxy
 
 1. Create Caddyfile
 
