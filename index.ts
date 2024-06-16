@@ -14,9 +14,10 @@ Bun.serve<{ p2s?: WebSocket; req: Request }>({
     // req = req.clone();
     console.log(`> ${req.url}`);
     return fetch(req.url, {
-      // ...req,
+      // 
       headers: req.headers,
       body: await new Response(req.body!).blob(),
+      // 
       redirect: "manual",
       credentials: "include",
       method: req.method,
