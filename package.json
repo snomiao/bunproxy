@@ -1,6 +1,6 @@
 {
   "name": "bunproxy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.",
   "keywords": [
     "bun",
