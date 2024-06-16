@@ -7,12 +7,12 @@ services:
   bunproxy:
     restart: always
     build: .
-    image: ghcr.io/snomiao/bunproxy
+    image: snomiao/bunproxy
     # dev
-    working_dir: /src
-    command: bun --hot /src/index.ts
+    working_dir: /app
+    command: bun --hot /app/index.ts
     volumes:
-      - ./:/src
+      - ./:/app
   nginx:
     image: nginx
   pong:

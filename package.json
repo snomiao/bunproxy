@@ -1,29 +1,33 @@
 {
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
   "name": "bunproxy",
-  "module": "index.ts",
-  "type": "module",
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "description": "Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.",
   "version": "1.0.2",
-  "main": "index.js",
-  "dependencies": {
-    "http-proxy": "^1.18.1"
-  },
-  "scripts": {
-    "test": "docker compose build",
-    "release": "npm version patch && docker compose build && docker compose push && npm publish"
-  },
+  "description": "Domain-based Port forwarder with http&websockets supported, proxy server is powerd by Bun.",
   "keywords": [
     "bun",
     "proxy",
     "http",
     "typescript"
   ],
+  "license": "ISC",
   "author": "snomiao@gmail.com",
-  "license": "ISC"
+  "type": "module",
+  "exports": {
+    "import": "./index.ts",
+    "types": "./index.ts"
+  },
+  "bin": "./index.ts",
+  "scripts": {
+    "release": "npm version patch && docker compose build && docker compose push && npm publish",
+    "test": "docker compose build"
+  },
+  "dependencies": {
+    "http-proxy": "^1.18.1",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
