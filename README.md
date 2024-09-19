@@ -95,24 +95,75 @@ curl -k https://pong-2000.fbi.com:8443
 curl -k https://pong-2001.fbi.com:8443
 ```
 
-## Development
+## Contributing
 
-To install dependencies:
+We welcome contributions from the community to make Bun Proxy better! Whether you're fixing bugs, adding new features, improving documentation, or raising issues, we appreciate your help. Here’s how you can get started:
 
-```bash
-bun install
-```
+### Code of Conduct
 
-To run:
+Please adhere to our [Code of Conduct](CODE_OF_CONDUCT.md) in all your interactions. Everyone is expected to be respectful and considerate in their communications.
 
-```bash
-bun run index.ts
-```
+### How to Contribute
 
-This project was created using `bun init` in bun v1.0.22. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+1. **Fork the repository**: Click the "Fork" button on the top right of the repository page and clone your fork locally.
+    ```bash
+    git clone https://github.com/your-username/bunproxy.git
+    cd bunproxy
+    ```
 
-Caddy config
+2. **Create a branch**: Make a new branch for your feature or bug fix.
+    ```bash
+    git checkout -b your-branch-name
+    ```
 
-## License
+3. **Make your changes**: Do your work on this branch. Make sure your code follows our style guidelines and includes tests where applicable.
 
-MIT
+4. **Install dependencies**: Ensure you have the dependencies installed using Bun.
+    ```bash
+    bun install
+    ```
+
+5. **Run the tests**: Make sure all tests pass before creating a pull request.
+    ```bash
+    bun run test
+    ```
+
+6. **Commit your changes**: Write a clear and concise commit message describing your changes.
+    ```bash
+    git commit -m "Description of your changes"
+    ```
+
+7. **Push to your fork**: Push your changes to your forked repository.
+    ```bash
+    git push origin your-branch-name
+    ```
+
+8. **Create a pull request**: Go to the original repository and create a pull request. Provide a brief description of the changes you made and why they're important.
+
+### Reporting Issues
+
+If you encounter a bug or have a feature request, please create an issue on the repository’s issue tracker. Please provide as much detail as possible to help us understand and address the problem.
+
+### Development
+
+To run the project locally, use the following commands:
+
+1. Install dependencies:
+    ```bash
+    bun install
+    ```
+
+2. Run the development server:
+    ```bash
+    bun run index.ts
+    ```
+
+### Style Guidelines
+
+We follow the standard JavaScript/TypeScript coding styles. Ensure your code passes all linting checks before submission.
+
+### License
+
+By contributing to this project, you agree that your contributions will be licensed under the MIT License.
+
+Thank you for contributing! Your help is much appreciated.
